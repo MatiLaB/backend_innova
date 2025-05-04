@@ -1,0 +1,32 @@
+{
+  "name": "backend_innova",
+  "version": "1.0.0",
+  "description": "Backend Prototipo Innova",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatiLaB/backend_innova.git"
+  },
+  "author": "MatiLaB",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MatiLaB/backend_innova/issues"
+  },
+  "homepage": "https://github.com/MatiLaB/backend_innova#readme",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "koa": "^3.0.0",
+    "koa-bodyparser": "^4.4.1",
+    "koa-cors": "^0.0.16",
+    "koa-logger": "^3.2.1",
+    "koa-router": "^13.0.1",
+    "sequelize": "^6.37.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
