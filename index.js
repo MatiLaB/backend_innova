@@ -3,13 +3,14 @@ const { koaBody } = require('koa-body')
 const Logger = require('koa-logger');
 const bodyParser = require('koa-bodyparser');
 const cors = require('@koa/cors');
-
+const authRoutes = require("./src/routes/authentication");
 const userRoutes = require("./src/routes/users");
 const clinicRoutes = require('./src/routes/clinics');
 const professionalRoutes = require('./src/routes/professionals');
 const reviewRoutes = require('./src/routes/reviews');
 const reportRoutes = require('./src/routes/reports');
 
+const jwtMiddleware = require('koa-jwt');
 const dotenv = require('dotenv');
 
 
@@ -33,12 +34,15 @@ app.use(async (ctx, next) => {
     }
 });
 
+app.use(authRoutes.routes()).use(authRoutes.allowedMethods());
 
-app.use(userRoutes.routes()).use(userRoutes.allowedMethods());
 app.use(clinicRoutes.routes()).use(clinicRoutes.allowedMethods());
 app.use(professionalRoutes.routes()).use(professionalRoutes.allowedMethods());
 app.use(reviewRoutes.routes()).use(reviewRoutes.allowedMethods());
 app.use(reportRoutes.routes()).use(reportRoutes.allowedMethods());
+
+app.use(jwtMiddleware ({ secret: process.env.JWT_SECRET}));
+app.use(userRoutes.routes()).use(userRoutes.allowedMethods());
 
 /*
 app.use((ctx, next) => {
