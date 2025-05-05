@@ -3,7 +3,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.bulkInsert('Clinic', [
+    await queryInterface.bulkInsert('clinics', [
       {
         name: 'Clínica Bella Vida',
         location: 'Calle Salud 123, Ciudad Belleza',
@@ -22,7 +22,7 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.bulkDelete('Clinic', null, {});
+    await queryInterface.bulkDelete('clinics', null, {});
   }
 };
 
