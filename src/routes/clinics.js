@@ -5,7 +5,24 @@ const router = new Router();
 
 // CRUD Básico
 router.get("/clinics", async (ctx) => {
-  ctx.body = await Clinic.findAll();
+  try {
+      const clinics = await Clinic.findAll();
+      // si no hay usuarios creados
+      if (clinics.length === 0) {
+        ctx.body = "No hay clinicas en la base de datos";
+        ctx.status = 404;
+        return;
+        // si solicitud es exitosa
+      } else {
+        ctx.body = clinics;
+        ctx.status = 200;
+      }
+      // si solicitud falla
+    } catch (err) {
+      console.log("Error", err);
+      ctx.body = "Hubo un error al intentar obtener las clinicas";
+      ctx.status = 500;
+    }
 });
 
 router.post("/clinics", async (ctx) => {

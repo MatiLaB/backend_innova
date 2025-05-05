@@ -6,7 +6,7 @@ const Professional = sequelize.define('Professional', {
     email: { type: DataTypes.STRING, allowNull: false },
     specialty: { type: DataTypes.STRING, allowNull: false }, // Ej: Cirujano Plástico, Anestesista
 }, {
-    tableName: 'professionals',
+    tableName: 'Professionals',
     timestamps: true,
 });
 

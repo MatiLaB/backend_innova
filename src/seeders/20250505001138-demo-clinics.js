@@ -19,6 +19,7 @@ module.exports = {
         agreementNote: ''
       }
     ]);
+    console.log('Seed de clínicas ejecutado')
   },
 
   async down(queryInterface, Sequelize) {

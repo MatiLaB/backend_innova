@@ -7,7 +7,7 @@ const User = sequelize.define('User', {
     password: { type: DataTypes.STRING, allowNull: false }, //encriptar
     priority: { type: DataTypes.STRING, allowNull: true }, //money
 }, {
-    tableName: 'users',
+    tableName: 'Users',
     timestamps: false,
 })
 

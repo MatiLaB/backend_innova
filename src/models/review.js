@@ -5,7 +5,7 @@ const Review = sequelize.define('Review', {
     rating: { type: DataTypes.FLOAT, allowNull: false },
     comment: { type: DataTypes.TEXT, allowNull: true },
 }, {
-    tableName: 'reviews',
+    tableName: 'Reviews',
     timestamps: true,
 });
 

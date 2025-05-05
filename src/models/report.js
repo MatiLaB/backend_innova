@@ -30,7 +30,7 @@ const Report = sequelize.define('Report', {
         defaultValue: 'pendiente', // otros estados podrían ser "resuelto", "en revisión"
     },
 }, {
-    tableName: 'reports',
+    tableName: 'Reports',
     timestamps: true, // crea createdAt y updatedAt
 });
 

@@ -9,7 +9,7 @@ const Clinic = sequelize.define('Clinic', {
     legalStatus: { type: DataTypes.STRING, allowNull: true }, // autorizada por seremi, etc
     agreementNote: { type: DataTypes.TEXT, allowNull: true }, // Ej: convenios y eso
 }, {
-    tableName: 'clinics',
+    tableName: 'Clinics',
     timestamps: false,
 })
 
