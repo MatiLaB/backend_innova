@@ -3,7 +3,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.addColumn('reviews', 'userId', {
+    await queryInterface.addColumn('Reviews', 'userId', {
       type: Sequelize.INTEGER,
       references: {
         model: 'Users',
@@ -11,7 +11,7 @@ module.exports = {
       },
       onDelete: 'CASCADE'
     });
-    await queryInterface.addColumn('reviews', 'clinicId', {
+    await queryInterface.addColumn('Reviews', 'clinicId', {
       type: Sequelize.INTEGER,
       allowNull: true,
       references: {
@@ -20,7 +20,7 @@ module.exports = {
       },
       onDelete: 'SET NULL'
     });
-    await queryInterface.addColumn('reviews', 'professionalId', {
+    await queryInterface.addColumn('Reviews', 'professionalId', {
       type: Sequelize.INTEGER,
       allowNull: true,
       references: {
@@ -32,8 +32,8 @@ module.exports = {
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.removeColumn('reviews', 'userId');
-    await queryInterface.removeColumn('reviews', 'clinicId');
-    await queryInterface.removeColumn('reviews', 'professionalId');
+    await queryInterface.removeColumn('Reviews', 'userId');
+    await queryInterface.removeColumn('Reviews', 'clinicId');
+    await queryInterface.removeColumn('Reviews', 'professionalId');
   }
 };

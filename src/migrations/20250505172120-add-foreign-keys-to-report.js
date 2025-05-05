@@ -3,7 +3,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.addColumn('reports', 'userId', {
+    await queryInterface.addColumn('Reports', 'userId', {
       type: Sequelize.INTEGER,
       references: {
         model: 'Users',
@@ -11,7 +11,7 @@ module.exports = {
       },
       onDelete: 'CASCADE'
     });
-    await queryInterface.addColumn('reports', 'clinicId', {
+    await queryInterface.addColumn('Reports', 'clinicId', {
       type: Sequelize.INTEGER,
       references: {
         model: 'Clinics',
@@ -22,7 +22,7 @@ module.exports = {
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.removeColumn('reports', 'userId');
-    await queryInterface.removeColumn('reports', 'clinicId');
+    await queryInterface.removeColumn('Reports', 'userId');
+    await queryInterface.removeColumn('Reports', 'clinicId');
   }
 };
