@@ -39,7 +39,8 @@ router.get("/clinics", async (ctx) => {
 
     if (clinics.length === 0) {
       ctx.status = 404;
-      ctx.body = "No hay clínicas que coincidan con los filtros.";
+      ctx.message = "No hay clínicas que coincidan con los filtros.";
+      ctx.body = [];
       return;
     }
 
