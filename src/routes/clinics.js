@@ -7,7 +7,7 @@ const router = new Router();
 // CRUD Básico
 router.get("/clinics", async (ctx) => {
   try {
-    const { name, location, treatment, minRating } = ctx.query;
+    const { name, location, procedures, minRating } = ctx.query;
 
     const where = {};
 
@@ -29,9 +29,9 @@ router.get("/clinics", async (ctx) => {
       };
     }
 
-    if (treatment) {
+    if (procedures) {
       where.procedures = {
-        [require('sequelize').Op.contains]: [treatment]
+        [require('sequelize').Op.contains]: [procedures]
       };
     }
 
