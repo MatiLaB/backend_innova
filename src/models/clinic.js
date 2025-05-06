@@ -8,6 +8,11 @@ const Clinic = sequelize.define('Clinic', {
     rating: { type: DataTypes.FLOAT, allowNull: true }, 
     legalStatus: { type: DataTypes.STRING, allowNull: true }, // autorizada por seremi, etc
     agreementNote: { type: DataTypes.TEXT, allowNull: true }, // Ej: convenios y eso
+    
+    procedures: { type: DataTypes.ARRAY(DataTypes.STRING), allowNull: true },
+    averagePrice: { type: DataTypes.STRING, allowNull: true },
+    yearsActive: { type: DataTypes.INTEGER, allowNull: true },
+    facilities: { type: DataTypes.TEXT, allowNull: true }, // o STRING si es más breve
 }, {
     tableName: 'Clinics',
     timestamps: false,

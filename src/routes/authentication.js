@@ -51,6 +51,8 @@ router.post("/createUser", async (ctx) => {
             {
             subject: newUser.id.toString(),
             expiresIn: expirationSeconds,
+            issuer: 'https://backend-innova-8do9.onrender.com',
+            audience: 'https://estetica-vs.netlify.app'
             }
         );
         ctx.body = {
@@ -105,6 +107,8 @@ router.post("/login", async (ctx) => {
         {
         subject: user.id.toString(),
         expiresIn: expirationSeconds,
+        issuer: 'https://backend-innova-8do9.onrender.com',
+        audience: 'https://estetica-vs.netlify.app'
         }
     );
     ctx.body = {

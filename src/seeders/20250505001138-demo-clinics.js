@@ -9,14 +9,22 @@ module.exports = {
         location: 'Calle Salud 123, Ciudad Belleza',
         rating: 4.5,
         legalStatus: 'Autorizado por SEREMI',
-        agreementNote: 'Convenio con Clinica de Los Andes'
+        agreementNote: 'Convenio con Clinica de Los Andes',
+        procedures: ['Botox', 'Liposucción'],
+        averagePrice: '5000000',
+        yearsActive: 5,
+        facilities: 'Solo un piso'
       },
       {
         name: 'Estética Premium',
         location: 'Av. Belleza 456, Ciudad Cuidado',
         rating: 4.8,
         legalStatus: 'Investigado por SEREMI',
-        agreementNote: ''
+        agreementNote: '',
+        procedures: ['Aumento mamario', 'Peeling facial'],
+        averagePrice: '6500000',
+        yearsActive: 7,
+        facilities: 'Grandes pabellones'
       }
     ]);
     console.log('Seed de clínicas ejecutado')
