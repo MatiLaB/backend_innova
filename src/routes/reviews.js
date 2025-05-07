@@ -32,4 +32,37 @@ router.delete("/reviews/:id", async (ctx) => {
   ctx.body = "Reseña eliminada";
 });
 
+router.get("/clinics/:clinicId/reviews", async (ctx) => {
+  const { clinicId } = ctx.params;
+  try {
+    const reviews = await Review.findAll({
+      where: { clinicId },
+      include: [{ model: User, attributes: ["username"] }],
+    });
+    ctx.body = reviews;
+  } catch (err) {
+    ctx.status = 500;
+    ctx.body = { error: "Error al obtener las reseñas" };
+  }
+});
+
+router.post("/clinics/:clinicId/reviews", async (ctx) => {
+  const { clinicId } = ctx.params;
+  const { content, rating } = ctx.request.body;
+  try {
+    const newReview = await Review.create({
+      content,
+      rating,
+      clinicId,
+      userId: ctx.state.user.id, // extraído del token
+    });
+    ctx.status = 201;
+    ctx.body = newReview;
+  } catch (err) {
+    ctx.status = 500;
+    ctx.body = { error: "Error al enviar la reseña" };
+  }
+});
+
+
 module.exports = router;
