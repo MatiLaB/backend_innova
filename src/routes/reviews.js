@@ -48,7 +48,7 @@ router.get("/clinics/:clinicId/reviews", async (ctx) => {
 
 router.post("/clinics/:clinicId/reviews", async (ctx) => {
   const { clinicId } = ctx.params;
-  const { content, rating } = ctx.request.body;
+  const { comment, rating } = ctx.request.body;
   try {
     const newReview = await Review.create({
       comment,
