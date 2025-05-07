@@ -49,6 +49,7 @@ router.get("/clinics/:clinicId/reviews", async (ctx) => {
 router.post("/clinics/:clinicId/reviews", async (ctx) => {
   const { clinicId } = ctx.params;
   const { comment, rating } = ctx.request.body;
+  console.log(clinicId, comment, rating, ctx.state.user.id);
   try {
     const newReview = await Review.create({
       comment,
