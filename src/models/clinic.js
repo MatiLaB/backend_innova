@@ -13,6 +13,7 @@ const Clinic = sequelize.define('Clinic', {
     averagePrice: { type: DataTypes.STRING, allowNull: true },
     yearsActive: { type: DataTypes.INTEGER, allowNull: true },
     facilities: { type: DataTypes.TEXT, allowNull: true }, // o STRING si es más breve
+    link: { type: DataTypes.STRING, allowNull: true },
 }, {
     tableName: 'Clinics',
     timestamps: false,
