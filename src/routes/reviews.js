@@ -51,7 +51,7 @@ router.post("/clinics/:clinicId/reviews", async (ctx) => {
   const { content, rating } = ctx.request.body;
   try {
     const newReview = await Review.create({
-      content,
+      comment,
       rating,
       clinicId,
       userId: ctx.state.user.id, // extraído del token
