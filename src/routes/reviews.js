@@ -48,14 +48,14 @@ router.get("/clinics/:clinicId/reviews", async (ctx) => {
 
 router.post("/clinics/:clinicId/reviews", async (ctx) => {
   const { clinicId } = ctx.params;
-  const { comment, rating } = ctx.request.body;
-  console.log(clinicId, comment, rating, ctx.state.user.id);
+  const { comment, rating, userId} = ctx.request.body;
+  console.log(clinicId, comment, rating, userId);
   try {
     const newReview = await Review.create({
       comment,
       rating,
       clinicId,
-      userId: ctx.state.user.id, // extraído del token
+      userId: userId, // extraído del token
     });
     ctx.status = 201;
     ctx.body = newReview;
