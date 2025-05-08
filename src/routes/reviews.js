@@ -37,7 +37,6 @@ router.get("/clinics/:clinicId/reviews", async (ctx) => {
   try {
     const reviews = await Review.findAll({
       where: { clinicId },
-      include: [{ model: User, attributes: ["username"] }],
     });
     ctx.body = reviews;
   } catch (err) {
