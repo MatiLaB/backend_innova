@@ -10,7 +10,7 @@ const Review = sequelize.define('Review', {
     professionalId: { type: DataTypes.INTEGER, allowNull: true, references: { model: 'Professionals', key: 'id' } }
 }, {
     tableName: 'Reviews',
-    timestamps: true,
+    timestamps: false,
 });
 
 module.exports = Review;

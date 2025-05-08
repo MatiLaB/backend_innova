@@ -7,7 +7,7 @@ const Professional = sequelize.define('Professional', {
     specialty: { type: DataTypes.STRING, allowNull: false }, // Ej: Cirujano Plástico, Anestesista
 }, {
     tableName: 'Professionals',
-    timestamps: true,
+    timestamps: false,
 });
 
 module.exports = Professional;

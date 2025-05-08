@@ -60,6 +60,7 @@ router.post("/clinics/:clinicId/reviews", async (ctx) => {
     ctx.status = 201;
     ctx.body = newReview;
   } catch (err) {
+    console.log(err);
     ctx.status = 500;
     ctx.body = { error: "Error al enviar la reseña" };
   }
